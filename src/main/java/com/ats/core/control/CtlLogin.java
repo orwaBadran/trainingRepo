@@ -32,7 +32,6 @@ import com.ats.core.generic.util.StringUtils;
  *
  * CtlLogin.java
  *
- * @author Faisal Khader <faisal.khader@ats-ware.com>
  * @since Jan 28, 2015
  */
 @Entity
