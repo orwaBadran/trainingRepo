@@ -1,4 +1,4 @@
-package com.ats.core.control;
+package com.ats.core.control.entity;
 
 import java.io.Serializable;
 import java.util.Date;

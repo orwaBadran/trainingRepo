@@ -20,7 +20,7 @@
 
 	<context-param>
 		<param-name>primefaces.THEME</param-name>
-		<param-value>ats-theme</param-value>
+		<param-value>aristo</param-value>
 	</context-param>
 
 	<context-param>
@@ -30,7 +30,7 @@
 
 	<context-param>
 		<param-name>primefaces.DIR</param-name>
-		<param-value>#{langMB.dir}</param-value>
+		<param-value>ltr</param-value>
 	</context-param>
 
 	<mime-mapping>
@@ -82,7 +82,7 @@
 	<!-- Spring Context Configuration' s Path definition -->
 	<context-param>
 		<param-name>contextConfigLocation</param-name>
-		<param-value>/WEB-INF/applicationContext.xml,/WEB-INF/database-config.xml, /WEB-INF/spring-security.xml, /WEB-INF/spring-mail.xml</param-value>
+		<param-value>/WEB-INF/applicationContext.xml,/WEB-INF/database-config.xml</param-value>
 	</context-param>
 
 	<!-- Project Stage Level -->
@@ -108,54 +108,6 @@
 		<param-value>true</param-value>
 	</context-param>
 
-	<filter>
-		<filter-name>ForceChangePasswordFilter</filter-name>
-		<filter-class>com.ats.web.generic.filter.ForceChangePasswordFilter</filter-class>
-	</filter>
-
-	<filter-mapping>
-		<filter-name>ForceChangePasswordFilter</filter-name>
-		<url-pattern>/pages/*</url-pattern>
-		<dispatcher>REQUEST</dispatcher>
-		<dispatcher>FORWARD</dispatcher>
-	</filter-mapping>
-
-
-	<filter>
-		<filter-name>springSecurityFilterChain</filter-name>
-		<filter-class>org.springframework.web.filter.DelegatingFilterProxy</filter-class>
-	</filter>
-	<filter-mapping>
-		<filter-name>springSecurityFilterChain</filter-name>
-		<url-pattern>/*</url-pattern>
-		<dispatcher>REQUEST</dispatcher>
-		<dispatcher>FORWARD</dispatcher>
-	</filter-mapping>
-
-
-
-	<filter>
-		<filter-name>traceUserNavigationFilter</filter-name>
-		<filter-class>com.ats.web.generic.servlets.TraceUserNavigation</filter-class>
-	</filter>
-	<filter-mapping>
-		<filter-name>traceUserNavigationFilter</filter-name>
-		<url-pattern>/pages/*</url-pattern>
-		<dispatcher>REQUEST</dispatcher>
-		<dispatcher>FORWARD</dispatcher>
-	</filter-mapping>
-
-	<filter>
-		<filter-name>SecureStationAccessFilter</filter-name>
-		<filter-class>com.ats.web.generic.servlets.SecureStationAccessFilter</filter-class>
-	</filter>
-	<filter-mapping>
-		<filter-name>SecureStationAccessFilter</filter-name>
-		<url-pattern>/pages/*</url-pattern>
-		<dispatcher>REQUEST</dispatcher>
-		<dispatcher>FORWARD</dispatcher>
-	</filter-mapping>
-
 	<!-- The Bootstrap listener to start up and shut down Spring's root WebApplicationContext. 
 		It is registered to Servlet Container -->
 	<listener>
@@ -165,9 +117,7 @@
 
 
 	<!-- Welcome Page -->
-	<welcome-file-list>
-		<welcome-file>public/login.jsf</welcome-file>
-	</welcome-file-list>
+
 	<jsp-config>
 		<jsp-property-group>
 			<url-pattern>*.*</url-pattern>
@@ -195,18 +145,6 @@
 	<servlet-mapping>
 		<servlet-name>Faces Servlet</servlet-name>
 		<url-pattern>*.faces</url-pattern>
-	</servlet-mapping>
-
-	<servlet>
-		<servlet-name>Push Servlet</servlet-name>
-		<servlet-class>org.primefaces.push.PushServlet</servlet-class>
-		<load-on-startup>1</load-on-startup>
-		<async-supported>true</async-supported>
-	</servlet>
-
-	<servlet-mapping>
-		<servlet-name>Push Servlet</servlet-name>
-		<url-pattern>/primepush/*</url-pattern>
 	</servlet-mapping>
 
 
